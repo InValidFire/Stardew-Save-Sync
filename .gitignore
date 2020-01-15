@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Credentials
+
+#google-api key
+client_secrets.json
+#personal account key
+credentials.json
