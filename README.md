@@ -13,11 +13,11 @@ The following people actively develop the project
     - file name
     - player name
     - playtime on file
-- sync Stardew Files from device to Google Drive
+- sync Stardew Files from device to Google Drive (**Done**)
   - General Sync = Syncs the latest version of the file found
     - if newer, sync replacing older
     - if file doesn't exist, sync
-  - Selective Sync = Syncs the selected version, ignoring timestamps
+  - Selective Sync = Syncs the selected version, ignoring timestamps (**Done**)
 - threading
   - split google authentication from UI thread
     - stops application from freezing while loading google drive data
