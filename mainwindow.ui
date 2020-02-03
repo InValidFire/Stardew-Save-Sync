@@ -16,7 +16,7 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>Stardew Save Transfer</string>
+   <string>Stardew Save Sync</string>
   </property>
   <property name="toolTip">
    <string/>
@@ -47,7 +47,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Stardew Save Transfer</string>
+       <string>Stardew Save Sync</string>
       </property>
       <property name="textFormat">
        <enum>Qt::PlainText</enum>
@@ -107,6 +107,11 @@
           <string>File Location</string>
          </property>
         </column>
+        <column>
+         <property name="text">
+          <string>Time Played</string>
+         </property>
+        </column>
        </widget>
       </item>
      </layout>
@@ -126,7 +131,7 @@
       <item>
        <widget class="QTreeWidget" name="treeWidgetDrive">
         <property name="columnCount">
-         <number>3</number>
+         <number>4</number>
         </property>
         <column>
          <property name="text">
@@ -156,6 +161,11 @@
          </property>
          <property name="toolTip">
           <string>File Location</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Time Played</string>
          </property>
         </column>
        </widget>
@@ -325,10 +335,78 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton_sync</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>generalsync()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>138</x>
+     <y>556</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>533</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>treeWidgetLocal</sender>
+   <signal>itemClicked(QTreeWidgetItem*,int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>localSelectionUpdate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>149</x>
+     <y>184</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>177</x>
+     <y>297</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>treeWidgetDrive</sender>
+   <signal>itemClicked(QTreeWidgetItem*,int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>driveSelectionUpdate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>326</x>
+     <y>499</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>255</x>
+     <y>315</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_selected</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>selectedsync()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>330</x>
+     <y>558</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>305</x>
+     <y>537</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>cleancache()</slot>
   <slot>refresh()</slot>
   <slot>consoleopen()</slot>
+  <slot>generalsync()</slot>
+  <slot>localSelectionUpdate()</slot>
+  <slot>driveSelectionUpdate()</slot>
+  <slot>selectedsync()</slot>
  </slots>
 </ui>
